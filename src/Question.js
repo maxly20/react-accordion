@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
+import { BiChevronDownCircle, BiChevronUpCircle } from 'react-icons/bi';
 
 const Question = ({ title, info }) => {
   const [showInfo, setShowInfo] = useState(false);
@@ -11,7 +11,11 @@ const Question = ({ title, info }) => {
       <header>
         <h4 onClick={infoToggle}>{title}</h4>
         <button className='btn' onClick={infoToggle}>
-          {showInfo ? <AiOutlineMinus /> : <AiOutlinePlus />}
+          {showInfo ? (
+            <BiChevronUpCircle className='btn-arrow' />
+          ) : (
+            <BiChevronDownCircle className='btn-arrow' />
+          )}
         </button>
       </header>
       {showInfo && <p onClick={infoToggle}>{info}</p>}

@@ -1,5 +1,5 @@
 import React from 'react';
-import SingleQuestion from './Question';
+import Question from './Question';
 import questions from './data';
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
         <h3>questions and answers about netflix</h3>
         <section className='info'>
           {questions.map(question => {
-            return <SingleQuestion key={question.id} {...question} />;
+            return <Question key={question.id} {...question} />;
           })}
         </section>
       </div>
